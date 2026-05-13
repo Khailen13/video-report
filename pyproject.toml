@@ -14,6 +14,15 @@ tabulate = "^0.10.0"
 pytest = "^9.0.3"
 pytest-cov = "^7.1.0"
 
+
+[tool.poetry.group.lint.dependencies]
+flake8 = "^7.3.0"
+black = "^26.3.1"
+isort = "^8.0.1"
+mypy = "^2.1.0"
+types-tabulate = "^0.10.0.20260508"
+flake8-pyproject = "^1.2.4"
+
 [tool.poetry.scripts]
 coffee-report = "video_report.cli:main"
 
@@ -25,3 +34,6 @@ build-backend = "poetry.core.masonry.api"
 testpaths = ["tests"]
 addopts = "-v --basetemp=./tmp"
 norecursedirs = [".git", "__pycache__", "*.egg-info"]
+
+[tool.flake8]
+max-line-length = 119
