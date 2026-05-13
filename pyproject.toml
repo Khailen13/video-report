@@ -1,16 +1,27 @@
-[project]
+[tool.poetry]
 name = "video-report"
 version = "0.1.0"
 description = "CLI tool for generating reports from YouTube video metrics"
-authors = [
-    {name = "Lenar Khaidarov",email = "haidarov_lenar@mail.ru"}
-]
+authors = ["Lenar Khaidarov <haidarov_lenar@mail.ru>"]
 readme = "README.md"
+packages = [{include = "video_report"}]
 
 [tool.poetry.dependencies]
 python = "^3.13"
 tabulate = "^0.10.0"
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^9.0.3"
+pytest-cov = "^7.1.0"
+
+[tool.poetry.scripts]
+coffee-report = "video_report.cli:main"
+
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-v --basetemp=./tmp"
+norecursedirs = [".git", "__pycache__", "*.egg-info"]
