@@ -1,15 +1,15 @@
 [project]
 name = "video-report"
 version = "0.1.0"
-description = ""
+description = "CLI tool for generating reports from YouTube video metrics"
 authors = [
     {name = "Lenar Khaidarov",email = "haidarov_lenar@mail.ru"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
-dependencies = [
-]
 
+[tool.poetry.dependencies]
+python = "^3.13"
+tabulate = "^0.10.0"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
